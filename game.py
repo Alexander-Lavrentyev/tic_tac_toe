@@ -85,6 +85,14 @@ def save_result(result):
     with open('results.txt', 'a') as f:
         f.write(result + '\n')
 
+def save_result(result):
+    # Открыть файл results.txt в режиме "добавление".
+    # Если нужно явно указать кодировку, добавьте параметр encoding='utf-8'.
+    file = open('results.txt', 'a')
+    # Записать в файл содержимое переменной result.
+    file.write(result + '\n')
+    file.close()
+
 def main():
     game = Board()
     current_player = 'X'
@@ -124,6 +132,7 @@ def main():
         pygame.display.update()
 
     pygame.quit()
+
 
 if __name__ == '__main__':
     main()
